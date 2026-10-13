@@ -1,0 +1,83 @@
+:root {
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #111827;
+  --sub: #4b5563;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-dark: #1e3a8a;
+  --accent-light: #eff6ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1120;
+    --card: #111827;
+    --text: #f3f4f6;
+    --sub: #d1d5db;
+    --muted: #9ca3af;
+    --border: #1f2937;
+    --accent: #60a5fa;
+    --accent-dark: #1e3a8a;
+    --accent-light: #172554;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+header {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb 60%, #3b82f6);
+  color: #fff;
+  padding: 48px 16px 64px;
+  border-radius: 0 0 32px 32px;
+}
+
+header .inner, main { max-width: 760px; margin: 0 auto; }
+
+header h1 { margin: 0; font-size: 2.2rem; letter-spacing: -0.03em; }
+header p { margin: 8px 0 0; opacity: 0.88; font-size: 1.1rem; }
+
+nav { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+main { padding: 0 16px 48px; margin-top: -32px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+h2 { font-size: 1.25rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+h3 { font-size: 1.02rem; margin: 20px 0 4px; }
+p, li { color: var(--sub); }
+ul { padding-left: 1.2em; }
+a { color: var(--accent); }
+
+.steps { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.step { background: var(--accent-light); border-radius: 16px; padding: 16px; }
+.step strong { display: block; color: var(--text); }
+.step span { color: var(--sub); font-size: 0.95rem; }
+
+.meta { color: var(--muted); font-size: 0.9rem; }
+
+footer { text-align: center; color: var(--muted); font-size: 0.88rem; padding: 0 16px 32px; }
